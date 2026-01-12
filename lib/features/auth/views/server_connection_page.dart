@@ -13,6 +13,7 @@ import '../../../core/auth/webview_cookie_helper.dart';
 import '../../../core/models/server_config.dart';
 import '../../../core/providers/app_providers.dart';
 import '../../../core/services/api_service.dart';
+import '../../../core/services/deep_link_service.dart';
 import '../../../core/services/worker_manager.dart';
 import '../../../core/services/input_validation_service.dart';
 import '../../../core/services/navigation_service.dart';
@@ -51,6 +52,19 @@ class _ServerConnectionPageState extends ConsumerState<ServerConnectionPage> {
   }
 
   Future<void> _prefillFromState() async {
+    // Check for pending deep link URL first
+    final pendingUrl = ref.read(pendingDeepLinkServerProvider);
+    if (pendingUrl != null && pendingUrl.isNotEmpty) {
+      ref.read(pendingDeepLinkServerProvider.notifier).clear();
+      if (mounted) {
+        setState(() {
+          _urlController.text = pendingUrl;
+        });
+      }
+      return;
+    }
+
+    // Fall back to active server URL
     final activeServer = await ref.read(activeServerProvider.future);
     if (!mounted || activeServer == null) return;
     setState(() {
