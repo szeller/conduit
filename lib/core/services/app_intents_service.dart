@@ -20,11 +20,11 @@ import '../../shared/services/tasks/task_queue.dart';
 
 part 'app_intents_service.g.dart';
 
-const _askIntentId = 'app.cogwheel.conduit.ask_chat';
-const _voiceCallIntentId = 'app.cogwheel.conduit.start_voice_call';
-const _sendTextIntentId = 'app.cogwheel.conduit.send_text';
-const _sendUrlIntentId = 'app.cogwheel.conduit.send_url';
-const _sendImageIntentId = 'app.cogwheel.conduit.send_image';
+const _askIntentId = 'com.szeller.conduit.ask_chat';
+const _voiceCallIntentId = 'com.szeller.conduit.start_voice_call';
+const _sendTextIntentId = 'com.szeller.conduit.send_text';
+const _sendUrlIntentId = 'com.szeller.conduit.send_url';
+const _sendImageIntentId = 'com.szeller.conduit.send_image';
 
 /// Method channel for receiving App Intent invocations from native iOS code.
 /// Native Swift code defines the intents with proper titles and metadata.

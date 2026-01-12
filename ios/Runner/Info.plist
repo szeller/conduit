@@ -4,7 +4,7 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>app.cogwheel.conduit.refresh</string>
+		<string>com.szeller.conduit.refresh</string>
 	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
@@ -45,17 +45,17 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>app.cogwheel.conduit.share</string>
+			<string>com.szeller.conduit.share</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>ShareMedia-app.cogwheel.conduit</string>
+				<string>ShareMedia-com.szeller.conduit</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>app.cogwheel.conduit.widget</string>
+			<string>com.szeller.conduit.widget</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>conduit</string>

@@ -121,7 +121,7 @@ class BackgroundStreamingHandler: NSObject {
     private var microphoneStreams: Set<String> = []
     private var channel: FlutterMethodChannel?
 
-    static let processingTaskIdentifier = "app.cogwheel.conduit.refresh"
+    static let processingTaskIdentifier = "com.szeller.conduit.refresh"
 
     override init() {
         super.init()
@@ -514,7 +514,7 @@ struct AskConduitIntent: AppIntent {
             ? ["prompt": prompt ?? ""]
             : [:]
         let result = await channel.invokeIntent(
-            identifier: "app.cogwheel.conduit.ask_chat",
+            identifier: "com.szeller.conduit.ask_chat",
             parameters: parameters
         )
 
@@ -546,7 +546,7 @@ struct StartVoiceCallIntent: AppIntent {
         }
 
         let result = await channel.invokeIntent(
-            identifier: "app.cogwheel.conduit.start_voice_call",
+            identifier: "com.szeller.conduit.start_voice_call",
             parameters: [:]
         )
 
@@ -585,7 +585,7 @@ struct ConduitSendTextIntent: AppIntent {
 
         let trimmed = text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let result = await channel.invokeIntent(
-            identifier: "app.cogwheel.conduit.send_text",
+            identifier: "com.szeller.conduit.send_text",
             parameters: ["text": trimmed ?? ""]
         )
 
@@ -622,7 +622,7 @@ struct ConduitSendUrlIntent: AppIntent {
         }
 
         let result = await channel.invokeIntent(
-            identifier: "app.cogwheel.conduit.send_url",
+            identifier: "com.szeller.conduit.send_url",
             parameters: ["url": url.absoluteString]
         )
 
@@ -669,7 +669,7 @@ struct ConduitSendImageIntent: AppIntent {
         let name = image.filename ?? "shared_image.jpg"
 
         let result = await channel.invokeIntent(
-            identifier: "app.cogwheel.conduit.send_image",
+            identifier: "com.szeller.conduit.send_image",
             parameters: [
                 "filename": name,
                 "bytes": base64,
